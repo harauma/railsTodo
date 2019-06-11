@@ -1,6 +1,6 @@
 <h1>やることリスト</h1>
 
-<table>
+<table class="ui celled table">
   <thead>
     <tr>
       <th><h2>ToDo</h2></th>
@@ -10,16 +10,29 @@
 
   <tbody>
     <% @todos.each do |todo| %>
+    <div class="item">
       <tr>
-        <td><%= todo.name %></td>
-        <td><%= link_to 'Show', todo %></td>
-        <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
-        <td><%= link_to 'Destroy', todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td data-label="Name"><%= todo.name %></td>
+        <td><%= link_to '詳細', todo %></td>
+        <td><%= link_to '編集', edit_todo_path(todo) %></td>
+        <td><%= link_to '削除', todo, method: :delete, data: { confirm: '本当に消していいの???' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<%# <table class="ui celled table">
+  <thead>
+    <tr>
+    <th>ToDo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Name"></td>
+    </tr>
+  </tbody>
+</table> %>
 <br>
 
-<%= link_to 'New Todo', new_todo_path %>
+<%= link_to 'Todo作成', new_todo_path %>
+<%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
