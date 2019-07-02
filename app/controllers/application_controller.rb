@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     end
 
     def after_sign_out_path_for(resource)
-        new_user_session_path
+        "/users/login"
     end
 
     before_action :configure_permitted_parameters, if: :devise_controller?

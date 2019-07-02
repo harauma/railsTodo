@@ -1,3 +1,5 @@
+@import "semantic-ui";
+
 body {
   background-color: #fff;
   color: #333;
@@ -21,6 +23,7 @@ pre {
 
 a {
   color: #000;
+  text-align: center;
 
   &:visited {
     color: #666;
@@ -81,4 +84,8 @@ div {
 
 label {
   display: block;
+}
+
+h1,tr {
+  text-align: center;
 }
