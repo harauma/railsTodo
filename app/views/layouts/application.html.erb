@@ -10,8 +10,14 @@
   </head>
 
   <body>
-  <%= notice %>
-  <%= alert %>
-    <%= yield %>
+  <div class="ui contener">
+    <% if notice %>
+    <p class="mes"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+    <p class="mes"><%= alert %></p>
+    <% end %>
+      <%= yield %>
+  </div>
   </body>
 </html>
