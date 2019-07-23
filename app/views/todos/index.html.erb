@@ -1,9 +1,11 @@
-<h1>やることリスト</h1>
+<h1>Todo一覧だお</h1>
 
+<% if @todos %>
 <table class="ui celled table">
   <thead>
     <tr>
-      <th><h2>ToDo</h2></th>
+      <th><h2>やること</h2></th>
+      <th><h2>ユーザ名</h2></th>
       <th></th>
       <th></th>
       <th></th>
@@ -12,16 +14,20 @@
 
   <tbody>
     <% @todos.each do |todo| %>
+    <% if todo.user_name == current_user.username %>
     <div class="item">
       <tr>
-        <td data-label="Name"><%= todo.name %></td>
+        <td data-label="やること"><%= todo.name %></td>
+        <td data-label="ユーザ名"><%= todo.user_name %></td>
         <td><%= link_to '詳細', todo %></td>
         <td><%= link_to '編集', edit_todo_path(todo) %></td>
         <td><%= link_to '削除', todo, method: :delete, data: { confirm: '本当に消していいの???' } %></td>
       </tr>
     <% end %>
+    <% end %>
   </tbody>
 </table>
+<% end %>
 <%# <table class="ui celled table">
   <thead>
     <tr>

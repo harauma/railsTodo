@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <label for="todo_name">やること</label>
+    <p><input type="text" name="todo" id="todo_name"/></p>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <input type="submit" name="commit" value="Todo作成！" data-disable-with="Create Todo"/>
   </div>
 <% end %>

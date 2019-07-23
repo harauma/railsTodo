@@ -10,7 +10,24 @@
   </head>
 
   <body>
-  <div class="ui contener">
+  <div class="ui borderless main menu">
+    <div class="ui text container">
+      <div class="header item">
+        <img class="logo" src="/gopher.gif">
+        Todoリスト
+        <img class="logo" src="/gopher.gif">
+      </div>
+      <% if user_session %>
+      <a rel="nofollow" class="item" data-method="delete" href="/users/logout">ログアウト</a>
+      <a rel="nofollow" href="/todos/new" class="item">Todo作成</a>
+      <a rel="nofollow" href="/todos" class="item">Todo一覧</a>
+      <a rel="nofollow" href="/user/all" class="item">ユーザ一覧</a>
+      <% else %>
+      <a rel="nofollow" class="item" href="/users/login">ログイン</a>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui main contener">
     <% if notice %>
     <p class="mes"><%= notice %></p>
     <% end %>
